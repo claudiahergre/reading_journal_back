@@ -1,0 +1,109 @@
+@host = http://localhost
+@port = 3000
+@apiLibros = /api/libros
+@apiUsuarios = /api/usuarios
+
+
+
+#########################
+##      API libros     ##
+#########################
+GET {{host}}:{{port}}{{apiLibros}}
+###
+
+GET {{host}}:{{port}}{{apiLibros}}/1
+
+
+###
+POST {{host}}:{{port}}{{apiLibros}}
+Content-Type: application/json
+
+{
+   "titulo": "Misery",
+    "autor":"stephen king",
+    "imagen":"",
+    "genero": "terror",
+    "puntuacion": "5",
+    "feche_inicio": "",
+    "fecha_fin": "",
+    "comentarios": ""
+}
+
+###
+PUT {{host}}:{{port}}{{apiLibros}}/editar/1
+Content-Type: application/json
+
+
+{
+   "titulo": "Misery",
+    "autor":"stephen king",
+    "imagen":"",
+    "genero": "terror",
+    "puntuacion": "5",
+    "feche_inicio": "",
+    "fecha_fin": "",
+    "comentarios": ""
+}
+
+
+###
+DELETE {{host}}:{{port}}{{apiLibros}}/1
+
+
+
+
+#########################
+##    API usuarios     ##
+#########################
+GET {{host}}:{{port}}{{apiUsuarios}}
+//funciona
+
+###
+GET {{host}}:{{port}}{{apiUsuarios}}/1
+//funciona
+
+###
+GET {{host}}:{{port}}{{apiUsuarios}}/perfil
+
+
+
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/registro
+Content-Type: application/json
+
+{
+  "nombre": "urraca",
+  "email": "urraca@aaruuur.com",
+  "contraseña":"urraca"
+}
+
+//funciona
+
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/login
+Content-Type: application/json
+
+{
+  "nombre": "urraca",
+  "email": "urraca@aaruuur.com",
+  "contraseña":"urraca"
+}
+
+###
+PUT {{host}}:{{port}}{{apiUsuarios}}/editar/1
+Content-Type: application/json
+
+{
+  "nombre": "urraquita",
+  "email": "urraca@aaruuur.com",
+  "contraseña":"urraca"
+}
+
+//funciona
+
+###
+DELETE {{host}}:{{port}}{{apiUsuarios}}/1
+
+//funciona
+
+###
